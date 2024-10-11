@@ -9,6 +9,8 @@ using UnityEngine.UIElements;
 public class Movement : MonoBehaviour
 {
     public Rigidbody rocketBody = null;
+    public AudioSource audioSource = null;
+    bool spacePressedDown, spacePressedUp;
     [SerializeField] float mainThrust = 36f;
     [SerializeField] float rotationThrust = 50f; 
     Vector3 direction = new Vector3(0, 2.5f, 0);
@@ -21,8 +23,23 @@ public class Movement : MonoBehaviour
     {
         
         rocketBody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true;
         String[] names = Input.GetJoystickNames();
-        Debug.Log(names);
+        //Debug.Log(names);
+        spacePressedDown = false;
+        spacePressedUp = false;
+    }
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Space)){
+            spacePressedDown = true;
+            spacePressedUp = false;
+        }
+        else if(Input.GetKeyUp(KeyCode.Space)){
+            spacePressedDown = false;
+            spacePressedUp = true;
+        }
     }
 
     // Update is called once per frame
@@ -33,13 +50,19 @@ public class Movement : MonoBehaviour
     }
     void ProcessThrust(){
         if(Input.GetKey(KeyCode.Space)){
-            
             rocketBody.AddRelativeForce(direction * mainThrust * Time.deltaTime);
         }
-    
-       
-        
-       
+        if(spacePressedDown){
+            Debug.Log("Space down");
+            if(!audioSource.isPlaying){
+                audioSource.Play();
+            }
+            
+        }
+        else if(spacePressedUp){
+            Debug.Log("space up");
+            audioSource.Stop();
+        }
     }
     void Explosion(){
         Vector3 explosionPosion = rocketBody.transform.position;
@@ -54,7 +77,7 @@ public class Movement : MonoBehaviour
     }
     void ProcessRotating(){
         foreach(char c in Input.inputString){
-            Debug.Log(c);
+            //Debug.Log(c);
         }
     
         if(Input.GetKey(KeyCode.A)){

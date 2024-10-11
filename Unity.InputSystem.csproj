@@ -471,6 +471,7 @@
     <None Include="Library\PackageCache\com.unity.inputsystem@1.11.1\InputSystem\Editor\UITKAssetEditor\PackageResources\NameAndParameterListViewItemTemplate.uxml" />
     <None Include="Library\PackageCache\com.unity.inputsystem@1.11.1\InputSystem\Editor\UITKAssetEditor\PackageResources\CompositePartBindingPropertiesEditor.uxml" />
     <None Include="Library\PackageCache\com.unity.inputsystem@1.11.1\InputSystem\Editor\UITKAssetEditor\PackageResources\InputAssetEditorDark.uss" />
+    <None Include="Library\PackageCache\com.unity.inputsystem@1.11.1\InputSystem\Plugins\iOS\iOSStepCounter.mm" />
     <None Include="Library\PackageCache\com.unity.inputsystem@1.11.1\InputSystem\Editor\UITKAssetEditor\PackageResources\InputActionsEditorStyles.uss" />
     <None Include="Library\PackageCache\com.unity.inputsystem@1.11.1\InputSystem\Editor\UITKAssetEditor\PackageResources\InputAssetEditorLight.uss" />
     <None Include="Library\PackageCache\com.unity.inputsystem@1.11.1\InputSystem\Editor\UITKAssetEditor\PackageResources\InputActionMapsTreeViewItem.uxml" />
