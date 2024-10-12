@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody rocketBody = null;
     public AudioSource audioSource = null;
-    bool spacePressedDown, spacePressedUp;
+    //bool spacePressedDown, spacePressedUp;
     [SerializeField] float mainThrust = 36f;
     [SerializeField] float rotationThrust = 50f; 
     Vector3 direction = new Vector3(0, 2.5f, 0);
@@ -27,19 +27,19 @@ public class Movement : MonoBehaviour
         audioSource.loop = true;
         String[] names = Input.GetJoystickNames();
         //Debug.Log(names);
-        spacePressedDown = false;
-        spacePressedUp = false;
+        // spacePressedDown = false;
+        // spacePressedUp = false;
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.Space)){
-            spacePressedDown = true;
-            spacePressedUp = false;
-        }
-        else if(Input.GetKeyUp(KeyCode.Space)){
-            spacePressedDown = false;
-            spacePressedUp = true;
-        }
+        // if(Input.GetKeyDown(KeyCode.Space)){
+        //     spacePressedDown = true;
+        //     spacePressedUp = false;
+        // }
+        // else if(Input.GetKeyUp(KeyCode.Space)){
+        //     spacePressedDown = false;
+        //     spacePressedUp = true;
+        // }
     }
 
     // Update is called once per frame
@@ -52,15 +52,14 @@ public class Movement : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)){
             rocketBody.AddRelativeForce(direction * mainThrust * Time.deltaTime);
         }
-        if(spacePressedDown){
-            Debug.Log("Space down");
+        if(Input.GetKey(KeyCode.Space)){
+            
             if(!audioSource.isPlaying){
                 audioSource.Play();
             }
             
         }
-        else if(spacePressedUp){
-            Debug.Log("space up");
+        else{
             audioSource.Stop();
         }
     }
