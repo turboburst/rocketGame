@@ -220,13 +220,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18421426}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.297, y: 9.8498, z: -2.5351}
+  m_LocalRotation: {x: -0.18640077, y: 0.11304349, z: -0.091254555, w: 0.97167313}
+  m_LocalPosition: {x: 3.9, y: 9.5, z: -2.5}
   m_LocalScale: {x: 23.039394, y: 21.483377, z: 22.255686}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -19.975, y: 15.661, z: -13.505}
 --- !u!1 &57854268
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinishiPad
       objectReference: {fileID: 0}
+    - target: {fileID: 1886802654539575723, guid: 29d8249595ca8f34bb5cdd3b24c8a493, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 2872820152002282020, guid: 29d8249595ca8f34bb5cdd3b24c8a493, type: 3}
       propertyPath: m_LocalPosition.x
       value: 59.61995
@@ -885,6 +889,167 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2872820152002282020, guid: 29d8249595ca8f34bb5cdd3b24c8a493, type: 3}
   m_PrefabInstance: {fileID: 1305333861}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2133131755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9011165857400940044, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+  m_PrefabInstance: {fileID: 6344287618889553846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2133131763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133131755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd23801c574c105408254520dea23acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  rocketCrash: {fileID: 8300000, guid: 5cdf51a6f3a8eb840b088fd8b38d2326, type: 3}
+  rocketArrive: {fileID: 8300000, guid: 198c8561866a44c41b4828d8bfd74d30, type: 3}
+--- !u!114 &2133131766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7700695029073313470, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+  m_PrefabInstance: {fileID: 6344287618889553846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133131755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb568867ef0670043a93c22564ad3005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2133131771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133131755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 59bc2b2976a319d46bab486eff5a5c4b, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2133131766}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: SetMovementVector
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d63dc073-d132-4a2f-b359-7879a02fe856
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c808018f-ca49-40bb-8519-f8ee1f53d251
+    m_ActionName: Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7aebf8dc-53cc-4281-8272-365644e28626
+    m_ActionName: Player/Attack[/XInputControllerWindows/buttonWest,/Mouse/leftButton,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1ea09986-e145-487d-88c4-94a351469087
+    m_ActionName: Player/Interact[/Keyboard/e,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e646810b-9acb-42a5-9581-c5cfd2f726b7
+    m_ActionName: Player/Crouch[/XInputControllerWindows/buttonEast,/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2133131766}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: SetRocketJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: abe60153-520d-4fb1-ad36-3e091a820af6
+    m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2df97e39-e252-4602-931f-8ba471a6016b
+    m_ActionName: Player/Previous[/Keyboard/1,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0133e0cf-672a-467f-a8bd-5af38a1eccb1
+    m_ActionName: Player/Next[/Keyboard/2,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 093bb4d9-8955-41ab-9d92-e1b1a0d3df47
+    m_ActionName: Player/Sprint[/Keyboard/leftShift,/XInputControllerWindows/leftStickPress]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8b7fd40f-8af1-4536-849c-8833dbcf28c8
+    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 103ee34a-097b-4c45-882b-6dde35fcf655
+    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e9e31a5b-7fcf-4cb8-9720-d9b994b7f7b4
+    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f1931b3-e796-4336-acd2-5d3e4b4fe164
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ead4291a-f24e-4411-ae93-051b1ec779ae
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2cbee053-cde1-46bc-898d-c25a8b99b9e4
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 68f3cd2c-cbb9-4692-a235-6b04cb1e6c27
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 72aa2e6f-1b4b-4112-9515-66766f2b2b53
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aee079ef-2d11-4e5b-8e78-40cdc4d57f8f
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 14522a5d-c1f2-4986-9d6b-696cfbcaa9da
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &134560526254152928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -950,6 +1115,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1808194906012139942, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808194906012139942, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f094b75cd37b072458d6a19cccdc111c, type: 3}
+    - target: {fileID: 1808194906012139942, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2699100395541556541, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -82.7
@@ -992,28 +1169,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950432599311623235, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
       propertyPath: m_Drag
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 6950432599311623235, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
-      propertyPath: m_Mass
-      value: 0.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7700695029073313470, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
       propertyPath: mainThrust
-      value: 36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7700695029073313470, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+      propertyPath: rocketLaunch
+      value: 
+      objectReference: {fileID: 8300000, guid: f094b75cd37b072458d6a19cccdc111c, type: 3}
+    - target: {fileID: 7700695029073313470, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
       propertyPath: rotationThrust
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9011165857400940044, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8605539405064671817, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9011165857400940044, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2133131763}
+    - targetCorrespondingSourceObject: {fileID: 9011165857400940044, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2133131771}
   m_SourcePrefab: {fileID: 100100000, guid: b90cf4636af32c2428b519e027fe1e76, type: 3}
 --- !u!1001 &8690785587340449890
 PrefabInstance:
@@ -1026,6 +1210,10 @@ PrefabInstance:
     - target: {fileID: 1886802654539575723, guid: 29d8249595ca8f34bb5cdd3b24c8a493, type: 3}
       propertyPath: m_Name
       value: LaunchPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886802654539575723, guid: 29d8249595ca8f34bb5cdd3b24c8a493, type: 3}
+      propertyPath: m_TagString
+      value: startTag
       objectReference: {fileID: 0}
     - target: {fileID: 2872820152002282020, guid: 29d8249595ca8f34bb5cdd3b24c8a493, type: 3}
       propertyPath: m_LocalPosition.x

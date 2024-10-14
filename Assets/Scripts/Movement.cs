@@ -10,59 +10,40 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody rocketBody = null;
     public AudioSource audioSource = null;
+    [SerializeField] AudioClip rocketLaunch = null;
+
     //bool spacePressedDown, spacePressedUp;
-    [SerializeField] float mainThrust = 36f;
-    [SerializeField] float rotationThrust = 50f; 
+    [SerializeField] float mainThrust = 0f;
+    [SerializeField] float rotationThrust = 0f; 
     Vector3 direction = new Vector3(0, 2.5f, 0);
     [SerializeField]float power = 20f;
     public float radius = 5f;
     public float upforce = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private InputSystem_Actions playerAction;
+
+    private void OnEnable() {
+
+        playerAction = new InputSystem_Actions();
+        playerAction.Player.Enable();
         rocketBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        audioSource.loop = true;
-        String[] names = Input.GetJoystickNames();
-        //Debug.Log(names);
-        // spacePressedDown = false;
-        // spacePressedUp = false;
+        AudioListener.pause = false;
+        
+    }
+    private void OnDisable(){
+        playerAction.Player.Disable();
     }
 
-    void Update(){
-        // if(Input.GetKeyDown(KeyCode.Space)){
-        //     spacePressedDown = true;
-        //     spacePressedUp = false;
-        // }
-        // else if(Input.GetKeyUp(KeyCode.Space)){
-        //     spacePressedDown = false;
-        //     spacePressedUp = true;
-        // }
-    }
-
-    // Update is called once per frame
     private void FixedUpdate() {
+        
         ProcessThrust();
         ProcessRotating();
-        //Invoke("Explosion", 5);
     }
-    void ProcessThrust(){
-        if(Input.GetKey(KeyCode.Space)){
-            rocketBody.AddRelativeForce(direction * mainThrust * Time.deltaTime);
-        }
-        if(Input.GetKey(KeyCode.Space)){
-            
-            if(!audioSource.isPlaying){
-                audioSource.Play();
-            }
-            
-        }
-        else{
-            audioSource.Stop();
-        }
+    public void ProcessThrust(){
+        rocketBody.AddRelativeForce(direction * mainThrust * Time.deltaTime);
     }
+
     void Explosion(){
         Vector3 explosionPosion = rocketBody.transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPosion, radius);
@@ -74,27 +55,41 @@ public class Movement : MonoBehaviour
 
         }
     }
-    void ProcessRotating(){
-        foreach(char c in Input.inputString){
-            //Debug.Log(c);
-        }
-    
-        if(Input.GetKey(KeyCode.A)){
-            rotateMethod(rotationThrust);
-        
-
-        }
-        else if(Input.GetKey(KeyCode.D)){
-            rotateMethod(-rotationThrust);
-
-        }
+    public void ProcessRotating(){
+        rotateMethod(rotationThrust);
 
     }
-    void rotateMethod(float rotationThisFrame){
+
+    public void SetMovementVector(InputAction.CallbackContext context){
+        Vector2 playerMovement = context.ReadValue<Vector2>();
+        if(playerMovement.x < 0){
+            rotationThrust = 50f;
+        }
+        else if(playerMovement.x >0){
+            rotationThrust = -50f;
+        }else{
+            rotationThrust = 0f;
+        }
+    }
+    public void SetRocketJump(InputAction.CallbackContext context){
+        
+        if(context.started || context.performed){
+            //audioSource.Play();
+            audioSource.PlayOneShot(rocketLaunch);
+            mainThrust = 35f;
+        }else{
+            mainThrust = 0f;
+        }
+        
+    }
+
+    public void rotateMethod(float rotation){
+        
         rocketBody.freezeRotation = true;
-        transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
+        transform.Rotate(Vector3.forward * rotation * Time.deltaTime);
         rocketBody.freezeRotation = false;
     }
 
+    
 
 }

@@ -359,6 +359,7 @@
 -analyzer:"D:/Softwares/Unity/Hub/Editor/2022.3.48f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Softwares/Unity/Hub/Editor/2022.3.48f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/InputSystem_Actions.cs"
+"Assets/Scripts/CollisionHandler.cs"
 "Assets/Scripts/Movement.cs"
 -langversion:9.0
 /deterministic
